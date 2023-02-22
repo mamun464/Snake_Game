@@ -32,6 +32,13 @@ class Snake:
             self.allSnake[snake_index].goto(x, y)
         self.head.forward(MOVE_DISTANCE)
 
+    def reset_snake(self):
+        for sanke in self.allSnake:
+            sanke.goto(1000,1000)
+        self.allSnake.clear()
+        self.crateSnake()
+        self.head=self.allSnake[0]
+
     def Up(self):
         if self.head.heading() != 270:
             self.head.setheading(90)
